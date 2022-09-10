@@ -6,11 +6,18 @@
 <h1>吳惠婷個人簡介</h1>
 <div id="list"></div>
 <script>
-let src="https://HTWuuu.github.io/test/ResumeDraft";
+let src="https://HTWuuu.github.io/test/data/ResumeDraft.json";
 fetch(src).then(function(response){
-   return response.Draft();
+   return response.json();
 }).then(function(result){
-   console.log("最終的資料",result);
+    console.log("最終的資料", result);
+    list.innerHTML="";
+    let product;
+    for(let i=0;i<result.length;i++){
+        product=result[i];
+        list.innerHTML+=product.question.bold()+" - "+product.answer+"<hr/>";
+    }
+ 
 });
 </script>
 </body>
