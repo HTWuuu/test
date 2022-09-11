@@ -15,7 +15,7 @@ fetch(src).then(function(response){
     let product;
     for(let i=0;i<result.length;i++){
         product=result[i];
-        list.innerHTML+=product.question.bold()+" - "+product.answer+"<hr/>";
+        list.innerHTML+=product.question.bold()+"\r\n<br/>"+product.answer+"<hr/>"
     }
  
 });
